@@ -1,4 +1,4 @@
-import { ProcessStep } from "./types";
+import { ProcessStep } from "../types";
 
 export const processSteps: ProcessStep[] = [
   {

@@ -1,4 +1,4 @@
-import { ContactInfo, SkillGroup } from "./types";
+import { ContactInfo, SkillGroup } from "../types";
 
 export const profile = {
   name: "Abdelrahman Hassan",

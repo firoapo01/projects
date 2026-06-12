@@ -1,4 +1,4 @@
-import { SeoMeta } from "./types";
+import { SeoMeta } from "../types";
 
 export const seo: Record<string, SeoMeta> = {
   home: {
