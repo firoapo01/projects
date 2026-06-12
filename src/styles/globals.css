@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-bg-page: theme(colors.sand.50);
+  --color-bg-surface: theme(colors.sand.100);
+  --color-bg-elevated: #ffffff;
+  --color-bg-sunken: theme(colors.night.50);
+
+  --color-text-primary: theme(colors.night.900);
+  --color-text-secondary: theme(colors.night.500);
+  --color-text-tertiary: theme(colors.night.400);
+
+  --color-border-subtle: theme(colors.sand.300);
+  --color-border-default: theme(colors.sand.200);
+  --color-border-strong: theme(colors.sand.500);
+
+  --color-accent: theme(colors.sand.500);
+  --color-accent-hover: theme(colors.sand.600);
+  --color-eyebrow: theme(colors.sand.600);
+}
+
+[data-theme="dark"] {
+  --color-bg-page: theme(colors.night.800);
+  --color-bg-surface: theme(colors.night.700);
+  --color-bg-elevated: theme(colors.night.600);
+  --color-bg-sunken: theme(colors.night.900);
+
+  --color-text-primary: theme(colors.sand.50);
+  --color-text-secondary: theme(colors.night.200);
+  --color-text-tertiary: theme(colors.night.300);
+
+  --color-border-subtle: theme(colors.night.600);
+  --color-border-default: theme(colors.night.500);
+  --color-border-strong: theme(colors.sand.500);
+
+  --color-accent: theme(colors.sand.400);
+  --color-accent-hover: theme(colors.sand.300);
+  --color-eyebrow: theme(colors.sand.400);
+}
+
+body {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+}

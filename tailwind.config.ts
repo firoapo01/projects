@@ -1,0 +1,127 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  darkMode: ["class", '[data-theme="dark"]'],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  theme: {
+    extend: {
+      colors: {
+        sand: {
+          50: "#FDFAF4",
+          100: "#F7F0E0",
+          200: "#EDE1C8",
+          300: "#DFD0AA",
+          400: "#C9B882",
+          500: "#B09A5A",
+          600: "#8C7840",
+          700: "#6B5B2E",
+          800: "#4A3F1F",
+          900: "#2C2512",
+        },
+        night: {
+          50: "#F4F2EE",
+          100: "#E8E4DC",
+          200: "#C8C2B6",
+          300: "#9E9789",
+          400: "#716A5E",
+          500: "#4A4540",
+          600: "#302C28",
+          700: "#242018",
+          800: "#1A1712",
+          900: "#0F0D09",
+        },
+        stone: {
+          100: "#F0EFED",
+          200: "#D9D8D5",
+          300: "#B8B6B2",
+          400: "#918F8B",
+          500: "#6B6966",
+          600: "#4F4D4B",
+          700: "#363533",
+          800: "#222120",
+          900: "#111010",
+        },
+        gold: {
+          DEFAULT: "#B09A5A",
+          light: "#C9B882",
+          deep: "#8C7840",
+        },
+        success: { DEFAULT: "#4A7C59", bg: "#EEF4F0" },
+        warning: { DEFAULT: "#A07830", bg: "#FBF4E6" },
+        error: { DEFAULT: "#8C3A3A", bg: "#F7EEEE" },
+        info: { DEFAULT: "#3A5F7A", bg: "#EBF2F7" },
+      },
+      fontFamily: {
+        display: ["var(--font-cormorant)", "Georgia", "serif"],
+        body: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "Courier New", "monospace"],
+      },
+      fontSize: {
+        xs: ["0.75rem", { lineHeight: "1.5" }],
+        sm: ["0.875rem", { lineHeight: "1.57" }],
+        base: ["1rem", { lineHeight: "1.7" }],
+        md: ["1.125rem", { lineHeight: "1.6" }],
+        lg: ["1.25rem", { lineHeight: "1.5" }],
+        xl: ["1.5rem", { lineHeight: "1.4" }],
+        "2xl": ["1.875rem", { lineHeight: "1.35" }],
+        "3xl": ["2.375rem", { lineHeight: "1.25" }],
+        "4xl": ["3rem", { lineHeight: "1.2" }],
+        "5xl": ["3.75rem", { lineHeight: "1.1" }],
+        "6xl": ["4.75rem", { lineHeight: "1.05" }],
+      },
+      spacing: {
+        18: "4.5rem",
+      },
+      borderRadius: {
+        none: "0",
+        sm: "0.25rem",
+        md: "0.5rem",
+        lg: "0.75rem",
+        xl: "1rem",
+        "2xl": "1.5rem",
+        full: "9999px",
+      },
+      boxShadow: {
+        none: "none",
+        sm: "0 1px 2px rgba(15,13,9,0.06), 0 1px 1px rgba(15,13,9,0.04)",
+        md: "0 4px 12px rgba(15,13,9,0.08), 0 2px 4px rgba(15,13,9,0.05)",
+        lg: "0 12px 32px rgba(15,13,9,0.12), 0 4px 8px rgba(15,13,9,0.06)",
+        gold: "0 0 0 3px rgba(176,154,90,0.25)",
+      },
+      maxWidth: {
+        xs: "30rem",
+        sm: "40rem",
+        md: "48rem",
+        lg: "64rem",
+        xl: "80rem",
+        "2xl": "90rem",
+      },
+      transitionDuration: {
+        instant: "0ms",
+        fast: "120ms",
+        base: "200ms",
+        slow: "320ms",
+        slower: "480ms",
+        slowest: "640ms",
+      },
+      transitionTimingFunction: {
+        standard: "cubic-bezier(0.4, 0, 0.2, 1)",
+        enter: "cubic-bezier(0, 0, 0.2, 1)",
+        exit: "cubic-bezier(0.4, 0, 1, 1)",
+        spring: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      },
+      keyframes: {
+        "slow-rotate": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        "slow-rotate": "slow-rotate 120s linear infinite",
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
