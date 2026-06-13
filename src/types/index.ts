@@ -18,6 +18,7 @@ export interface Project {
   lessonsLearned?: string;
   results: string;
   links?: ProjectLink[];
+  images?: string[];
 }
 
 export interface Service {

@@ -1,10 +1,24 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import PageWrapper from "@/components/layout/PageWrapper";
 import { projects, getProjectBySlug } from "@/data/projects";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  const project = getProjectBySlug(params.slug);
+
+  if (!project) {
+    return {};
+  }
+
+  return {
+    title: `${project.title} — Case Study | OmniStack`,
+    description: project.description,
+  };
 }
 
 export default function ProjectCaseStudyPage({
@@ -73,6 +87,20 @@ export default function ProjectCaseStudyPage({
             </ul>
           </aside>
         </div>
+
+        {project.images?.length ? (
+          <div className="grid gap-6 md:grid-cols-2">
+            {project.images.map((src) => (
+              <Image
+                key={src}
+                src={src}
+                alt={`${project.title} screenshot`}
+                width={800}
+                height={600}
+              />
+            ))}
+          </div>
+        ) : null}
 
         <div>
           <p>Have a similar project? Let&apos;s talk.</p>
