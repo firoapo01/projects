@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { processSteps } from "@/data/process";
+import { profile } from "@/data/profile";
 
 export default function ProcessOverview() {
+  const { eyebrow, heading, footerCta } = profile.processOverview;
+
   return (
     <section className="px-5 py-24 md:px-8">
-      <p>How It Works</p>
-      <h2>A clear process from first conversation to final launch.</h2>
+      <p>{eyebrow}</p>
+      <h2>{heading}</h2>
 
       <div>
         {processSteps.map((step) => (
@@ -16,7 +19,7 @@ export default function ProcessOverview() {
         ))}
       </div>
 
-      <Link href="/process">See the Full Process →</Link>
+      <Link href={footerCta.href}>{footerCta.label}</Link>
     </section>
   );
 }

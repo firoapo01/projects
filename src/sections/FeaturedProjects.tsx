@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { profile } from "@/data/profile";
 
 export default function FeaturedProjects() {
+  const { eyebrow, heading, body, footerCta } = profile.featuredProjects;
+
   return (
     <section className="px-5 py-24 md:px-8">
-      <p>Selected Work</p>
-      <h2>Real projects for real businesses.</h2>
-      <p>
-        Three client projects built and deployed — from e-commerce stores to
-        full branding systems.
-      </p>
+      <p>{eyebrow}</p>
+      <h2>{heading}</h2>
+      <p>{body}</p>
 
       <div>
         {projects.map((project) => (
@@ -22,7 +22,7 @@ export default function FeaturedProjects() {
         ))}
       </div>
 
-      <Link href="/projects">View All Projects →</Link>
+      <Link href={footerCta.href}>{footerCta.label}</Link>
     </section>
   );
 }

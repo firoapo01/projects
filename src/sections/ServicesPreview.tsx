@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { services } from "@/data/services";
+import { profile } from "@/data/profile";
 
 export default function ServicesPreview() {
+  const { eyebrow, heading, footerCta } = profile.servicesPreview;
+
   return (
     <section className="px-5 py-24 md:px-8">
-      <p>What I Do</p>
-      <h2>Web development that solves real business problems.</h2>
+      <p>{eyebrow}</p>
+      <h2>{heading}</h2>
 
       <div>
         {services.map((service) => (
@@ -16,7 +19,7 @@ export default function ServicesPreview() {
         ))}
       </div>
 
-      <Link href="/services">See All Services →</Link>
+      <Link href={footerCta.href}>{footerCta.label}</Link>
     </section>
   );
 }

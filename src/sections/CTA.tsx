@@ -1,16 +1,16 @@
 import Link from "next/link";
+import { profile } from "@/data/profile";
 
 export default function CTA() {
+  const { heading, body, primaryCta, secondaryCta } = profile.ctaBanner;
+
   return (
     <section className="px-5 py-24 md:px-8">
-      <h2>Ready to start? Let's build something together.</h2>
-      <p>
-        Whether you're a business looking for a developer, or a company hiring
-        for a junior role — I'd love to hear from you.
-      </p>
+      <h2>{heading}</h2>
+      <p>{body}</p>
       <div>
-        <Link href="/contact">Get in Touch →</Link>
-        <Link href="/resume">View Resume</Link>
+        <Link href={primaryCta.href}>{primaryCta.label}</Link>
+        <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
       </div>
     </section>
   );

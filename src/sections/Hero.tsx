@@ -1,18 +1,17 @@
 import Link from "next/link";
+import { profile } from "@/data/profile";
 
 export default function Hero() {
+  const { eyebrow, headline, subheadline, primaryCta, secondaryCta } = profile.hero;
+
   return (
     <section className="px-5 py-24 md:px-8">
-      <p>Junior Frontend & WordPress Developer</p>
-      <h1>Building Modern Websites with Code, WordPress & AI</h1>
-      <p>
-        I help businesses create fast, well-built web experiences — using
-        WordPress, custom code, and AI-assisted workflows to deliver results
-        that matter.
-      </p>
+      <p>{eyebrow}</p>
+      <h1>{headline}</h1>
+      <p>{subheadline}</p>
       <div>
-        <Link href="/projects">View My Projects →</Link>
-        <Link href="/contact">Contact Me</Link>
+        <Link href={primaryCta.href}>{primaryCta.label}</Link>
+        <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
       </div>
     </section>
   );

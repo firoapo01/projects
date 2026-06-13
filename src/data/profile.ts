@@ -6,6 +6,36 @@ export const profile = {
   location: "Turkey",
   shortBio:
     "Junior Frontend & WordPress Developer. Based in Turkey. Building real things, learning fast.",
+  hero: {
+    eyebrow: "Junior Frontend & WordPress Developer",
+    headline: "Building Modern Websites with Code, WordPress & AI",
+    subheadline:
+      "I help businesses create fast, well-built web experiences — using WordPress, custom code, and AI-assisted workflows to deliver results that matter.",
+    primaryCta: { label: "View My Projects →", href: "/projects" },
+    secondaryCta: { label: "Contact Me", href: "/contact" },
+  },
+  ctaBanner: {
+    heading: "Ready to start? Let's build something together.",
+    body: "Whether you're a business looking for a developer, or a company hiring for a junior role — I'd love to hear from you.",
+    primaryCta: { label: "Get in Touch →", href: "/contact" },
+    secondaryCta: { label: "View Resume", href: "/resume" },
+  },
+  featuredProjects: {
+    eyebrow: "Selected Work",
+    heading: "Real projects for real businesses.",
+    body: "Three client projects built and deployed — from e-commerce stores to full branding systems.",
+    footerCta: { label: "View All Projects →", href: "/projects" },
+  },
+  servicesPreview: {
+    eyebrow: "What I Do",
+    heading: "Web development that solves real business problems.",
+    footerCta: { label: "See All Services →", href: "/services" },
+  },
+  processOverview: {
+    eyebrow: "How It Works",
+    heading: "A clear process from first conversation to final launch.",
+    footerCta: { label: "See the Full Process →", href: "/process" },
+  },
   longBio: [
     "I didn't start with a clear plan. I started with a problem to solve — a business needed a website, I figured out how to build it, and something clicked. The combination of logic, craft, and visible output made sense to me in a way that not many things had before.",
     "That first project led to more projects. Each one was slightly harder than the last. Each one required me to learn something I didn't know yet — WooCommerce configuration, responsive CSS, custom JavaScript, debugging production code under real pressure. I learned by doing, which meant I learned by making mistakes and fixing them. That's still how I learn.",
