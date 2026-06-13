@@ -1,9 +1,9 @@
 import PageWrapper from "@/components/layout/PageWrapper";
-import Hero from "@/sections/home/Hero";
-import FeaturedProjects from "@/sections/home/FeaturedProjects";
-import ServicesPreview from "@/sections/home/ServicesPreview";
-import ProcessOverview from "@/sections/home/ProcessOverview";
-import CtaBanner from "@/sections/home/CtaBanner";
+import Hero from "@/sections/Hero";
+import FeaturedProjects from "@/sections/FeaturedProjects";
+import ServicesPreview from "@/sections/ServicesPreview";
+import ProcessOverview from "@/sections/ProcessOverview";
+import CTA from "@/sections/CTA";
 
 export default function HomePage() {
   return (
@@ -12,7 +12,7 @@ export default function HomePage() {
       <FeaturedProjects />
       <ServicesPreview />
       <ProcessOverview />
-      <CtaBanner />
+      <CTA />
     </PageWrapper>
   );
 }
