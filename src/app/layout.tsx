@@ -24,8 +24,27 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: seo.home.title,
+  metadataBase: new URL("https://omnistack.dev"),
+  title: {
+    default: seo.home.title,
+    template: "%s | OmniStack",
+  },
   description: seo.home.description,
+  openGraph: {
+    type: "website",
+    siteName: "OmniStack",
+    title: seo.home.title,
+    description: seo.home.description,
+    url: "https://omnistack.dev",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "OmniStack — Abdelrahman Hassan" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.home.title,
+    description: seo.home.description,
+    images: ["/opengraph-image"],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

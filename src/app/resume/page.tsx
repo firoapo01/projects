@@ -9,6 +9,15 @@ import { seo } from "@/data/seo";
 export const metadata = {
   title: seo.resume.title,
   description: seo.resume.description,
+  openGraph: {
+    title: seo.resume.title,
+    description: seo.resume.description,
+    url: "https://omnistack.dev/resume",
+  },
+  twitter: {
+    title: seo.resume.title,
+    description: seo.resume.description,
+  },
 };
 
 export default function ResumePage() {

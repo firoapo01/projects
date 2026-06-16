@@ -13,9 +13,19 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const project = getProjectBySlug(params.slug);
   if (!project) return {};
+  const title = `${project.title} — Case Study | OmniStack`;
   return {
-    title: `${project.title} — Case Study | OmniStack`,
+    title,
     description: project.description,
+    openGraph: {
+      title,
+      description: project.description,
+      url: `https://omnistack.dev/projects/${project.slug}`,
+    },
+    twitter: {
+      title,
+      description: project.description,
+    },
   };
 }
 

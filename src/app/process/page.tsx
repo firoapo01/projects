@@ -8,6 +8,15 @@ import { seo } from "@/data/seo";
 export const metadata = {
   title: seo.process.title,
   description: seo.process.description,
+  openGraph: {
+    title: seo.process.title,
+    description: seo.process.description,
+    url: "https://omnistack.dev/process",
+  },
+  twitter: {
+    title: seo.process.title,
+    description: seo.process.description,
+  },
 };
 
 export default function ProcessPage() {
