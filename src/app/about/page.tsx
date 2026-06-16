@@ -1,59 +1,121 @@
-import PageWrapper from "@/components/layout/PageWrapper";
 import Link from "next/link";
+import PageWrapper from "@/components/layout/PageWrapper";
+import Section from "@/components/ui/Section";
+import Eyebrow from "@/components/ui/Eyebrow";
 import { profile, values, skills, learningPath } from "@/data/profile";
+import { seo } from "@/data/seo";
+
+export const metadata = {
+  title: seo.about.title,
+  description: seo.about.description,
+};
 
 export default function AboutPage() {
   return (
     <PageWrapper>
-      <section className="px-5 py-24 md:px-8">
-        <p>About</p>
-        <h1>Hi, I&apos;m {profile.name.split(" ")[0]}.</h1>
-        <p>{profile.shortBio}</p>
-      </section>
+      <Section>
+        <Eyebrow>About</Eyebrow>
+        <h1 className="font-display text-4xl font-light text-[var(--color-text-primary)] md:text-5xl">
+          Hi, I&apos;m {profile.name.split(" ")[0]}.
+        </h1>
+        <p className="mt-4 font-body text-base text-[var(--color-text-secondary)] md:text-md">
+          {profile.shortBio}
+        </p>
+      </Section>
 
-      <section className="px-5 py-16 md:px-8">
-        <h2>My journey into web development</h2>
-        {profile.longBio.map((paragraph, i) => (
-          <p key={i}>{paragraph}</p>
-        ))}
-      </section>
+      <Section className="pt-0 lg:pt-0">
+        <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
+          My journey into web development
+        </h2>
+        <div className="mt-6 flex max-w-2xl flex-col gap-5">
+          {profile.longBio.map((paragraph, i) => (
+            <p
+              key={i}
+              className="font-body text-base leading-relaxed text-[var(--color-text-secondary)]"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </Section>
 
-      <section className="px-5 py-16 md:px-8">
-        <p>Working Style</p>
-        <h2>How I approach every project.</h2>
-        <div>
+      <Section className="pt-0 lg:pt-0">
+        <Eyebrow>Working Style</Eyebrow>
+        <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
+          How I approach every project.
+        </h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {values.map((value) => (
-            <div key={value.title}>
-              <h3>{value.title}</h3>
-              <p>{value.description}</p>
+            <div
+              key={value.title}
+              className="flex flex-col gap-2 rounded-lg border border-[var(--color-border-default)] bg-[var(--color-bg-surface)] p-6"
+            >
+              <h3 className="font-body text-base font-semibold text-[var(--color-text-primary)]">
+                {value.title}
+              </h3>
+              <p className="font-body text-sm text-[var(--color-text-secondary)]">
+                {value.description}
+              </p>
             </div>
           ))}
         </div>
-      </section>
+      </Section>
 
-      <section className="px-5 py-16 md:px-8">
-        <p>Currently Learning</p>
-        <h2>{learningPath.title}</h2>
-        <p>{learningPath.provider}</p>
-        <p>Currently at: {learningPath.currentlyAt}</p>
-        <p>Working toward: {learningPath.workingToward.join(" · ")}</p>
-      </section>
+      <Section className="pt-0 lg:pt-0">
+        <Eyebrow>Currently Learning</Eyebrow>
+        <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
+          {learningPath.title}
+        </h2>
+        <p className="mt-2 font-body text-sm text-[var(--color-text-secondary)]">
+          {learningPath.provider} · {learningPath.status}
+        </p>
+        <p className="mt-4 font-body text-sm text-[var(--color-text-secondary)]">
+          Currently at:{" "}
+          <span className="font-medium text-[var(--color-text-primary)]">
+            {learningPath.currentlyAt}
+          </span>
+        </p>
+        <p className="mt-1 font-body text-sm text-[var(--color-text-secondary)]">
+          Working toward:{" "}
+          <span className="font-mono">{learningPath.workingToward.join(" · ")}</span>
+        </p>
+      </Section>
 
-      <section className="px-5 py-16 md:px-8">
-        <p>Tech Stack</p>
-        <h2>Tools I work with.</h2>
-        {skills.map((group) => (
-          <div key={group.category}>
-            <h3>{group.category}</h3>
-            <p>{group.items.join(" · ")}</p>
-          </div>
-        ))}
-      </section>
+      <Section className="pt-0 lg:pt-0">
+        <Eyebrow>Tech Stack</Eyebrow>
+        <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
+          Tools I work with.
+        </h2>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {skills.map((group) => (
+            <div key={group.category}>
+              <h3 className="font-body text-xs font-medium uppercase tracking-[0.08em] text-[var(--color-text-tertiary)]">
+                {group.category}
+              </h3>
+              <p className="mt-2 font-body text-sm text-[var(--color-text-secondary)]">
+                {group.items.join(" · ")}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Section>
 
-      <section className="px-5 py-16 md:px-8">
-        <Link href="/projects">See My Projects →</Link>
-        <Link href="/contact">Get in Touch →</Link>
-      </section>
+      <Section className="pt-0 lg:pt-0">
+        <div className="flex flex-wrap gap-4">
+          <Link
+            href="/projects"
+            className="rounded-md bg-sand-500 px-6 py-3 font-body text-sm font-medium tracking-wide text-sand-50 transition-colors duration-fast hover:bg-sand-600"
+          >
+            See My Projects →
+          </Link>
+          <Link
+            href="/contact"
+            className="rounded-md border border-[var(--color-border-default)] px-6 py-3 font-body text-sm font-medium text-[var(--color-text-primary)] transition-colors duration-fast hover:border-[var(--color-border-strong)]"
+          >
+            Get in Touch →
+          </Link>
+        </div>
+      </Section>
     </PageWrapper>
   );
 }

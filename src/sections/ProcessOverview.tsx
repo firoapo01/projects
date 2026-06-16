@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Section from "@/components/ui/Section";
+import Eyebrow from "@/components/ui/Eyebrow";
 import { processSteps } from "@/data/process";
 import { profile } from "@/data/profile";
 
@@ -6,20 +8,38 @@ export default function ProcessOverview() {
   const { eyebrow, heading, footerCta } = profile.processOverview;
 
   return (
-    <section className="px-5 py-24 md:px-8">
-      <p>{eyebrow}</p>
-      <h2>{heading}</h2>
+    <Section>
+      <Eyebrow>{eyebrow}</Eyebrow>
+      <h2 className="font-display text-3xl font-light text-[var(--color-text-primary)] md:text-4xl">
+        {heading}
+      </h2>
 
-      <div>
-        {processSteps.map((step) => (
-          <div key={step.step}>
-            <span>{String(step.step).padStart(2, "0")}</span>
-            <p>{step.title}</p>
+      <div className="mt-12 flex flex-wrap gap-4">
+        {processSteps.map((step, index) => (
+          <div key={step.step} className="flex items-center gap-3">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[var(--color-border-strong)] font-body text-xs font-semibold text-[var(--color-accent)]">
+              {String(step.step).padStart(2, "0")}
+            </div>
+            <span className="font-body text-sm font-medium text-[var(--color-text-primary)]">
+              {step.title}
+            </span>
+            {index < processSteps.length - 1 && (
+              <span className="hidden font-body text-[var(--color-text-tertiary)] sm:inline">
+                →
+              </span>
+            )}
           </div>
         ))}
       </div>
 
-      <Link href={footerCta.href}>{footerCta.label}</Link>
-    </section>
+      <div className="mt-10">
+        <Link
+          href={footerCta.href}
+          className="font-body text-sm font-medium text-[var(--color-accent)] transition-colors duration-fast hover:text-[var(--color-accent-hover)]"
+        >
+          {footerCta.label}
+        </Link>
+      </div>
+    </Section>
   );
 }

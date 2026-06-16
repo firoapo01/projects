@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import PageWrapper from "@/components/layout/PageWrapper";
+import Section from "@/components/ui/Section";
+import Eyebrow from "@/components/ui/Eyebrow";
 import { projects, getProjectBySlug } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -10,11 +12,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const project = getProjectBySlug(params.slug);
-
-  if (!project) {
-    return {};
-  }
-
+  if (!project) return {};
   return {
     title: `${project.title} — Case Study | OmniStack`,
     description: project.description,
@@ -27,69 +25,139 @@ export default function ProjectCaseStudyPage({
   params: { slug: string };
 }) {
   const project = getProjectBySlug(params.slug);
-
-  if (!project) {
-    notFound();
-  }
+  if (!project) notFound();
 
   return (
     <PageWrapper>
-      <section className="px-5 py-24 md:px-8">
-        <Link href="/projects">← Back to Projects</Link>
+      <Section>
+        <Link
+          href="/projects"
+          className="mb-10 inline-block font-body text-sm text-[var(--color-text-tertiary)] transition-colors duration-fast hover:text-[var(--color-accent)]"
+        >
+          ← Back to Projects
+        </Link>
 
-        <p>{project.category.join(" · ")}</p>
-        <h1>{project.title}</h1>
-        <p>{project.description}</p>
+        <Eyebrow>{project.category.join(" · ")}</Eyebrow>
+        <h1 className="font-display text-4xl font-light text-[var(--color-text-primary)] md:text-5xl">
+          {project.title}
+        </h1>
+        <p className="mt-4 font-body text-base text-[var(--color-text-secondary)] md:text-md">
+          {project.description}
+        </p>
 
-        <div>
-          <p>Client: {project.client}</p>
-          <p>Type: {project.category.join(", ")}</p>
-          <p>Year: {project.year}</p>
+        <div className="mt-6 flex flex-wrap gap-6 border-y border-[var(--color-border-subtle)] py-5">
+          <div>
+            <p className="font-body text-xs uppercase tracking-[0.08em] text-[var(--color-text-tertiary)]">Client</p>
+            <p className="mt-1 font-body text-sm font-medium text-[var(--color-text-primary)]">{project.client}</p>
+          </div>
+          <div>
+            <p className="font-body text-xs uppercase tracking-[0.08em] text-[var(--color-text-tertiary)]">Year</p>
+            <p className="mt-1 font-body text-sm font-medium text-[var(--color-text-primary)]">{project.year}</p>
+          </div>
+          <div>
+            <p className="font-body text-xs uppercase tracking-[0.08em] text-[var(--color-text-tertiary)]">Stack</p>
+            <p className="mt-1 font-mono text-xs text-[var(--color-text-secondary)]">
+              {project.technologies.join(" · ")}
+            </p>
+          </div>
           {project.links?.map((link) =>
             link.url ? (
-              <a key={link.label} href={link.url} target="_blank" rel="noreferrer">
+              <a
+                key={link.label}
+                href={link.url}
+                target="_blank"
+                rel="noreferrer"
+                className="self-end font-body text-sm font-medium text-[var(--color-accent)] hover:underline"
+              >
                 {link.label} ↗
               </a>
             ) : null
           )}
         </div>
 
-        <div className="grid gap-12 md:grid-cols-[2fr_1fr]">
-          <div>
-            <h2>The Problem</h2>
-            <p>{project.problem}</p>
+        <div className="mt-12 grid gap-12 lg:grid-cols-[2fr_1fr]">
+          <div className="flex flex-col gap-10">
+            <div>
+              <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
+                The Problem
+              </h2>
+              <p className="mt-3 font-body text-base leading-relaxed text-[var(--color-text-secondary)]">
+                {project.problem}
+              </p>
+            </div>
 
-            <h2>The Solution</h2>
-            <p>{project.solution}</p>
+            <div>
+              <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
+                The Solution
+              </h2>
+              {project.solution.split("\n\n").map((para, i) => (
+                <p
+                  key={i}
+                  className="mt-3 font-body text-base leading-relaxed text-[var(--color-text-secondary)]"
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
 
-            <h2>Challenges</h2>
-            {project.challenges.map((challenge) => (
-              <p key={challenge}>{challenge}</p>
-            ))}
+            <div>
+              <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
+                Challenges
+              </h2>
+              <div className="mt-3 flex flex-col gap-4">
+                {project.challenges.map((challenge) => (
+                  <p
+                    key={challenge}
+                    className="font-body text-base leading-relaxed text-[var(--color-text-secondary)]"
+                  >
+                    {challenge}
+                  </p>
+                ))}
+              </div>
+            </div>
 
             {project.lessonsLearned ? (
-              <>
-                <h2>Lessons Learned</h2>
-                <p>{project.lessonsLearned}</p>
-              </>
+              <div>
+                <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
+                  Lessons Learned
+                </h2>
+                <p className="mt-3 font-body text-base leading-relaxed text-[var(--color-text-secondary)]">
+                  {project.lessonsLearned}
+                </p>
+              </div>
             ) : null}
 
-            <h2>Results</h2>
-            <p>{project.results}</p>
+            <div>
+              <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
+                Results
+              </h2>
+              <p className="mt-3 font-body text-base leading-relaxed text-[var(--color-text-secondary)]">
+                {project.results}
+              </p>
+            </div>
           </div>
 
-          <aside>
-            <h3>Technologies</h3>
-            <ul>
-              {project.technologies.map((tech) => (
-                <li key={tech}>{tech}</li>
-              ))}
-            </ul>
+          <aside className="flex flex-col gap-6 lg:border-l lg:border-[var(--color-border-subtle)] lg:pl-10">
+            <div>
+              <h3 className="font-body text-xs font-medium uppercase tracking-[0.08em] text-[var(--color-text-tertiary)]">
+                Technologies
+              </h3>
+              <ul className="mt-3 flex flex-col gap-2">
+                {project.technologies.map((tech) => (
+                  <li
+                    key={tech}
+                    className="inline-block rounded-sm border border-[var(--color-border-default)] bg-[var(--color-bg-surface)] px-3 py-1 font-mono text-xs text-[var(--color-text-secondary)]"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </aside>
         </div>
 
         {project.images?.length ? (
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="mt-16 grid gap-6 sm:grid-cols-2">
             {project.images.map((src) => (
               <Image
                 key={src}
@@ -97,16 +165,24 @@ export default function ProjectCaseStudyPage({
                 alt={`${project.title} screenshot`}
                 width={800}
                 height={600}
+                className="rounded-lg"
               />
             ))}
           </div>
         ) : null}
 
-        <div>
-          <p>Have a similar project? Let&apos;s talk.</p>
-          <Link href="/contact">Start a Conversation →</Link>
+        <div className="mt-16 border-t border-[var(--color-border-subtle)] pt-12 text-center">
+          <p className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
+            Have a similar project?
+          </p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-block rounded-md bg-sand-500 px-8 py-3 font-body text-sm font-medium tracking-wide text-sand-50 transition-colors duration-fast hover:bg-sand-600"
+          >
+            Start a Conversation →
+          </Link>
         </div>
-      </section>
+      </Section>
     </PageWrapper>
   );
 }
