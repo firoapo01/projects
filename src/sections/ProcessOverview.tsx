@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
+import FadeIn from "@/components/ui/FadeIn";
 import { processSteps } from "@/data/process";
 import { profile } from "@/data/profile";
 
@@ -9,12 +10,14 @@ export default function ProcessOverview() {
 
   return (
     <Section>
-      <Eyebrow>{eyebrow}</Eyebrow>
-      <h2 className="font-display text-3xl font-light text-[var(--color-text-primary)] md:text-4xl">
-        {heading}
-      </h2>
+      <FadeIn>
+        <Eyebrow>{eyebrow}</Eyebrow>
+        <h2 className="font-display text-3xl font-light text-[var(--color-text-primary)] md:text-4xl">
+          {heading}
+        </h2>
+      </FadeIn>
 
-      <div className="mt-12 flex flex-wrap gap-4">
+      <FadeIn className="mt-12 flex flex-wrap gap-4">
         {processSteps.map((step, index) => (
           <div key={step.step} className="flex items-center gap-3">
             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[var(--color-border-strong)] font-body text-xs font-semibold text-[var(--color-accent)]">
@@ -30,16 +33,16 @@ export default function ProcessOverview() {
             )}
           </div>
         ))}
-      </div>
+      </FadeIn>
 
-      <div className="mt-10">
+      <FadeIn className="mt-10">
         <Link
           href={footerCta.href}
           className="font-body text-sm font-medium text-[var(--color-accent)] transition-colors duration-fast hover:text-[var(--color-accent-hover)]"
         >
           {footerCta.label}
         </Link>
-      </div>
+      </FadeIn>
     </Section>
   );
 }
