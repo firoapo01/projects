@@ -12,9 +12,9 @@ export const ctaNav: NavLink = { label: "Let's Talk", href: "/contact" };
 
 export const footerNav: NavLink[] = [
   { label: "Resume", href: "/resume" },
-  { label: "GitHub", href: "https://github.com/abdelrahman-hassan" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/abdelrahman-hassan" },
-  { label: "Email", href: "mailto:hello@omnistack.dev" },
+  { label: "GitHub", href: "https://github.com/firoapo01" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/abdelrahman-hassan-0b81a717b" },
+  { label: "Email", href: "mailto:abowael0112@gmail.com" },
 ];
 
 export const brand = {
