@@ -14,7 +14,7 @@ export const footerNav: NavLink[] = [
   { label: "Resume", href: "/resume" },
   { label: "GitHub", href: "https://github.com/firoapo01" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/abdelrahman-hassan-0b81a717b" },
-  { label: "Email", href: "https://mailto:abowael0112@gmail.com" },
+  { label: "Email", href: "mailto:abowael0112@gmail.com" },
 ];
 
 export const brand = {
