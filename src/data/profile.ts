@@ -90,9 +90,9 @@ export const learningPath = {
 };
 
 export const contactInfo: ContactInfo = {
-  email: "hello@omnistack.dev", // TODO: update with actual email
-  linkedin: "https://linkedin.com/in/abdelrahman-hassan", // TODO: update with actual URL
-  github: "https://github.com/abdelrahman-hassan", // TODO: update with actual URL
+  email: "abowael0112@gmail.com",
+  linkedin: "https://www.linkedin.com/in/abdelrahman-hassan-0b81a717b",
+  github: "https://github.com/firoapo01",
   location: "Turkey",
 };
 
