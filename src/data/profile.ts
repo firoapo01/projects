@@ -12,7 +12,7 @@ export const profile = {
     subheadline:
       "I help businesses create fast, well-built web experiences — using WordPress, custom code, and AI-assisted workflows to deliver results that matter.",
     primaryCta: { label: "View My Projects →", href: "/projects" },
-    secondaryCta: { label: "Contact Me", href: "/contact" },
+    secondaryCta: { label: "Get in Touch", href: "/contact" },
   },
   ctaBanner: {
     heading: "Ready to start? Let's build something together.",

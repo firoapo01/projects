@@ -40,6 +40,11 @@ export default function FeaturedProjects() {
               <p className="flex-1 font-body text-sm text-[var(--color-text-secondary)]">
                 {project.description}
               </p>
+              {project.outcome && (
+                <p className="font-body text-xs text-[var(--color-text-tertiary)]">
+                  {project.outcome}
+                </p>
+              )}
               <span className="font-body text-sm font-medium text-[var(--color-accent)] transition-colors duration-fast group-hover:text-[var(--color-accent-hover)]">
                 View Case Study →
               </span>

@@ -8,7 +8,7 @@ export const mainNav: NavLink[] = [
   { label: "Process", href: "/process" },
 ];
 
-export const ctaNav: NavLink = { label: "Let's Talk", href: "/contact" };
+export const ctaNav: NavLink = { label: "Get in Touch", href: "/contact" };
 
 export const footerNav: NavLink[] = [
   { label: "Resume", href: "/resume" },

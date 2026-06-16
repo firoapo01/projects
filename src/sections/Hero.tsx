@@ -12,7 +12,9 @@ export default function Hero() {
     <Section className="py-24 md:py-32 lg:py-40">
       <FadeIn staggerChildren>
         <FadeIn>
-          <Eyebrow>{eyebrow}</Eyebrow>
+          <p className="mb-3 font-body text-sm text-[var(--color-text-tertiary)]">
+            {profile.name} — {eyebrow}
+          </p>
         </FadeIn>
         <FadeIn>
           <h1 className="font-display text-4xl font-light leading-tight tracking-tight text-[var(--color-text-primary)] md:text-5xl lg:text-6xl">

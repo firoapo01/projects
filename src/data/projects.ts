@@ -10,6 +10,8 @@ export const projects: Project[] = [
     category: ["E-commerce", "WordPress", "WooCommerce", "AI-Assisted"],
     description:
       "A custom WooCommerce store for a contact lens retail business — built with AI-assisted development and refined by hand.",
+    outcome:
+      "Built and deployed a fully functional WooCommerce store from scratch.",
     problem:
       "Martal Lens needed more than an off-the-shelf store. They required a professional, branded e-commerce experience where customers could browse, filter, and purchase contact lenses with confidence. The existing digital presence wasn't doing justice to the product or the business.",
     solution:
@@ -34,6 +36,8 @@ export const projects: Project[] = [
     category: ["E-commerce", "Branding", "WordPress", "Elementor", "WooCommerce"],
     description:
       "A full e-commerce website with branding and visual identity for a pharmacy — from logo to live store.",
+    outcome:
+      "Delivered complete branding and a live e-commerce store end to end.",
     problem:
       "Safira Pharmacy needed to establish a digital presence that matched the trust and professionalism their customers expect from a healthcare brand. That meant more than a functional website — it meant a visual identity, a consistent brand system, and an e-commerce experience that felt safe, clear, and credible.",
     solution:
@@ -57,6 +61,8 @@ export const projects: Project[] = [
     category: ["Platform", "WordPress", "Custom Dev", "AI-Assisted"],
     description:
       "A professional WordPress platform aligned with UN/UNESCO sustainability goals — custom-built with performance and structure in mind.",
+    outcome:
+      "Custom WordPress theme with 14+ PHP templates, built for a live platform.",
     problem:
       "The Global Ecosystem organisation needed a web platform that matched the ambition of its mission. The existing digital footprint didn't reflect the organisation's credibility or scale. They needed something that felt premium, purposeful, and capable of hosting both a public-facing presence and a marketplace for their ecosystem of partners.",
     solution:

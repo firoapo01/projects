@@ -11,6 +11,7 @@ export interface Project {
   year: string;
   category: string[];
   description: string;
+  outcome?: string;
   problem: string;
   solution: string;
   technologies: string[];

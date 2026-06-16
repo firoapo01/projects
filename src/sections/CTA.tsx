@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Section from "@/components/ui/Section";
 import FadeIn from "@/components/ui/FadeIn";
-import { profile } from "@/data/profile";
+import { profile, contactInfo } from "@/data/profile";
 
 export default function CTA() {
   const { heading, body, primaryCta, secondaryCta } = profile.ctaBanner;
@@ -18,6 +18,14 @@ export default function CTA() {
           <p className="mt-4 max-w-lg font-body text-base text-[var(--color-text-secondary)] md:text-md">
             {body}
           </p>
+        </FadeIn>
+        <FadeIn>
+          <a
+            href={`mailto:${contactInfo.email}`}
+            className="mt-4 inline-block font-mono text-sm text-[var(--color-text-secondary)] transition-colors duration-fast hover:text-[var(--color-accent)]"
+          >
+            {contactInfo.email}
+          </a>
         </FadeIn>
         <FadeIn>
           <div className="mt-8 flex flex-wrap gap-4">
