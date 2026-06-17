@@ -3,6 +3,11 @@ export interface ProjectLink {
   url: string;
 }
 
+export interface ProjectScreenshot {
+  src: string;
+  caption: string;
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -12,6 +17,8 @@ export interface Project {
   category: string[];
   description: string;
   outcome?: string;
+  thumbnail?: string;
+  screenshots?: ProjectScreenshot[];
   problem: string;
   solution: string;
   technologies: string[];

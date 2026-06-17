@@ -166,18 +166,28 @@ export default function ProjectCaseStudyPage({
           </aside>
         </div>
 
-        {project.images?.length ? (
-          <div className="mt-16 grid gap-6 sm:grid-cols-2">
-            {project.images.map((src) => (
-              <Image
-                key={src}
-                src={src}
-                alt={`${project.title} screenshot`}
-                width={800}
-                height={600}
-                className="rounded-lg"
-              />
-            ))}
+        {project.screenshots?.length ? (
+          <div className="mt-16">
+            <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
+              Screenshots
+            </h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              {project.screenshots.map((shot) => (
+                <figure key={shot.src}>
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
+                    <Image
+                      src={shot.src}
+                      alt={shot.caption}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="mt-2 font-body text-xs text-[var(--color-text-tertiary)]">
+                    {shot.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         ) : null}
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import PageWrapper from "@/components/layout/PageWrapper";
 import Section from "@/components/ui/Section";
@@ -39,8 +40,19 @@ export default function ProjectsPage() {
               >
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="group flex h-full flex-col gap-3 rounded-xl border border-[var(--color-border-default)] bg-[var(--color-bg-surface)] p-6 shadow-none transition-shadow duration-base hover:shadow-md"
+                  className="group flex h-full flex-col rounded-xl border border-[var(--color-border-default)] bg-[var(--color-bg-surface)] shadow-none transition-shadow duration-base hover:shadow-md"
                 >
+                  {project.thumbnail && (
+                    <div className="relative h-[240px] w-full overflow-hidden rounded-t-xl">
+                      <Image
+                        src={project.thumbnail}
+                        alt={`${project.title} preview`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="flex flex-1 flex-col gap-3 p-6">
                   <p className="font-mono text-xs text-[var(--color-text-tertiary)]">
                     {project.category.join(" · ")}
                   </p>
@@ -58,6 +70,7 @@ export default function ProjectsPage() {
                   <span className="font-body text-sm font-medium text-[var(--color-accent)] transition-colors duration-fast group-hover:text-[var(--color-accent-hover)]">
                     View Full Case Study →
                   </span>
+                  </div>
                 </Link>
               </motion.div>
             ))}
