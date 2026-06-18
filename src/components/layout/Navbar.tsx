@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { mainNav, ctaNav, brand } from "@/data/navigation";
 import { cn } from "@/lib/utils";
 import MobileNav from "./MobileNav";
@@ -47,22 +48,37 @@ export default function Navbar() {
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  "font-body text-sm font-medium transition-colors duration-fast ease-standard",
+                  "relative font-body text-sm font-medium transition-colors duration-fast ease-standard",
                   isActive
-                    ? "text-sand-800 underline underline-offset-8"
+                    ? "text-sand-800"
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-accent)]"
                 )}
               >
                 {link.label}
+                {isActive ? (
+                  <span
+                    className="absolute -bottom-[2px] left-0 h-px w-full bg-current"
+                  />
+                ) : (
+                  <motion.span
+                    className="absolute -bottom-[2px] left-0 h-px w-full bg-current"
+                    style={{ scaleX: 0, originX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                  />
+                )}
               </Link>
             );
           })}
-          <Link
+          <motion.a
             href={ctaNav.href}
             className="rounded-md bg-sand-700 px-5 py-2 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast ease-standard hover:bg-sand-800 focus-visible:outline-none focus-visible:shadow-gold"
+            whileHover={{ y: -2, boxShadow: "0 8px 20px rgba(180, 150, 80, 0.3)" }}
+            whileTap={{ y: 0, boxShadow: "none" }}
+            transition={{ duration: 0.2 }}
           >
             {ctaNav.label}
-          </Link>
+          </motion.a>
         </div>
 
         <MobileNav />

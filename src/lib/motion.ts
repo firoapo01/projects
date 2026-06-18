@@ -1,8 +1,9 @@
 import type { TargetAndTransition, Transition } from "framer-motion";
 
-type VariantMap = Record<string, TargetAndTransition & { transition?: Transition }>;
+export type VariantMap = Record<string, TargetAndTransition & { transition?: Transition }>;
 
 const enter: Transition = { duration: 0.45, ease: [0, 0, 0.2, 1] };
+const easeOut: [number, number, number, number] = [0, 0, 0.58, 1];
 
 export const fadeUp: VariantMap = {
   hidden: { opacity: 0, y: 20 },
@@ -19,7 +20,7 @@ export const pageVariants: VariantMap = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: easeOut },
   },
   exit: {
     opacity: 0,
@@ -27,3 +28,15 @@ export const pageVariants: VariantMap = {
     transition: { duration: 0.3 },
   },
 };
+
+export const scrollReveal: VariantMap = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } },
+};
+
+export function staggerContainer(stagger: number): VariantMap {
+  return {
+    hidden: {},
+    visible: { transition: { staggerChildren: stagger } },
+  };
+}
