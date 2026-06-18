@@ -171,7 +171,7 @@ export default function ProjectCaseStudyPage({
             <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
               Screenshots
             </h2>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
               {project.screenshots.map((shot) => (
                 <figure key={shot.src}>
                   <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
@@ -182,7 +182,7 @@ export default function ProjectCaseStudyPage({
                       className="object-cover"
                     />
                   </div>
-                  <figcaption className="mt-2 font-body text-xs text-[var(--color-text-tertiary)]">
+                  <figcaption className="mt-2 font-body text-sm text-[var(--color-text-tertiary)]">
                     {shot.caption}
                   </figcaption>
                 </figure>

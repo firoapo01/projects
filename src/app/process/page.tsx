@@ -112,7 +112,7 @@ export default function ProcessPage() {
           href="/contact"
           className="mt-4 inline-block rounded-md bg-sand-500 px-6 py-3 font-body text-sm font-medium tracking-wide text-sand-50 transition-colors duration-fast hover:bg-sand-600"
         >
-          Let&apos;s Talk About Your Project →
+          Get in Touch About Your Project →
         </Link>
       </Section>
     </PageWrapper>

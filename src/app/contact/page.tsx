@@ -48,7 +48,7 @@ export default function ContactPage() {
                 name="name"
                 type="text"
                 required
-                className="h-10 rounded-md border border-[var(--color-border-default)] bg-[var(--color-bg-sunken)] px-4 font-body text-base text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-border-strong)] focus:outline-none focus:shadow-gold"
+                className="h-10 w-full rounded-md border border-[var(--color-border-default)] bg-[var(--color-bg-sunken)] px-4 font-body text-base text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-border-strong)] focus:outline-none focus:shadow-gold"
               />
             </div>
 
@@ -64,7 +64,7 @@ export default function ContactPage() {
                 name="email"
                 type="email"
                 required
-                className="h-10 rounded-md border border-[var(--color-border-default)] bg-[var(--color-bg-sunken)] px-4 font-body text-base text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-border-strong)] focus:outline-none focus:shadow-gold"
+                className="h-10 w-full rounded-md border border-[var(--color-border-default)] bg-[var(--color-bg-sunken)] px-4 font-body text-base text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-border-strong)] focus:outline-none focus:shadow-gold"
               />
             </div>
 
@@ -78,7 +78,7 @@ export default function ContactPage() {
               <select
                 id="subject"
                 name="subject"
-                className="h-10 rounded-md border border-[var(--color-border-default)] bg-[var(--color-bg-sunken)] px-4 font-body text-base text-[var(--color-text-primary)] focus:border-[var(--color-border-strong)] focus:outline-none focus:shadow-gold"
+                className="h-10 w-full rounded-md border border-[var(--color-border-default)] bg-[var(--color-bg-sunken)] px-4 font-body text-base text-[var(--color-text-primary)] focus:border-[var(--color-border-strong)] focus:outline-none focus:shadow-gold"
               >
                 <option value="project">I have a project I&apos;d like to discuss</option>
                 <option value="role">I&apos;m hiring for a junior role</option>
@@ -100,13 +100,13 @@ export default function ContactPage() {
                 rows={5}
                 placeholder="What are you working on? What do you need?"
                 required
-                className="rounded-md border border-[var(--color-border-default)] bg-[var(--color-bg-sunken)] px-4 py-3 font-body text-base text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-border-strong)] focus:outline-none focus:shadow-gold"
+                className="w-full rounded-md border border-[var(--color-border-default)] bg-[var(--color-bg-sunken)] px-4 py-3 font-body text-base text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-border-strong)] focus:outline-none focus:shadow-gold"
               />
             </div>
 
             <button
               type="submit"
-              className="self-start rounded-md bg-sand-500 px-6 py-3 font-body text-sm font-medium tracking-wide text-sand-50 transition-colors duration-fast hover:bg-sand-600 focus-visible:outline-none focus-visible:shadow-gold"
+              className="w-full rounded-md bg-sand-500 px-6 py-3 font-body text-sm font-medium tracking-wide text-sand-50 transition-colors duration-fast hover:bg-sand-600 focus-visible:outline-none focus-visible:shadow-gold md:w-auto min-h-[44px]"
             >
               Send Message →
             </button>

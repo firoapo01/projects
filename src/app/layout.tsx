@@ -57,7 +57,7 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-body">
+      <body className="font-body overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />

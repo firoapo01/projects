@@ -17,7 +17,7 @@ export default function Hero() {
           </p>
         </FadeIn>
         <FadeIn>
-          <h1 className="font-display text-4xl font-light leading-tight tracking-tight text-[var(--color-text-primary)] md:text-5xl lg:text-6xl">
+          <h1 className="font-display text-3xl font-light leading-tight tracking-tight text-[var(--color-text-primary)] sm:text-4xl md:text-5xl lg:text-6xl">
             {headline}
           </h1>
         </FadeIn>

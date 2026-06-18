@@ -17,10 +17,10 @@ export default function TechStack() {
   return (
     <Section className="py-10 md:py-14">
       <FadeIn>
-        <p className="mb-4 font-body text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-text-tertiary)]">
+        <p className="mb-4 font-body text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-text-tertiary)] text-center md:text-left">
           Tech Stack
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap justify-center gap-2 md:justify-start">
           {stack.map((item) => (
             <span
               key={item}
