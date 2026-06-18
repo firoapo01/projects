@@ -31,7 +31,7 @@ export default function CTA() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href={primaryCta.href}
-              className="rounded-md bg-sand-500 px-6 py-3 font-body text-sm font-medium tracking-wide text-sand-50 transition-colors duration-fast hover:bg-sand-600"
+              className="rounded-md bg-sand-700 px-6 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast hover:bg-sand-800"
             >
               {primaryCta.label}
             </Link>

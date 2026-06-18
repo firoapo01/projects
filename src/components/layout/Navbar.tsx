@@ -49,7 +49,7 @@ export default function Navbar() {
                 className={cn(
                   "font-body text-sm font-medium transition-colors duration-fast ease-standard",
                   isActive
-                    ? "text-[var(--color-accent)] underline underline-offset-8"
+                    ? "text-sand-800 underline underline-offset-8"
                     : "text-[var(--color-text-secondary)] hover:text-[var(--color-accent)]"
                 )}
               >
@@ -59,7 +59,7 @@ export default function Navbar() {
           })}
           <Link
             href={ctaNav.href}
-            className="rounded-md bg-sand-500 px-5 py-2 font-body text-sm font-medium tracking-wide text-sand-50 transition-colors duration-fast ease-standard hover:bg-sand-600 focus-visible:outline-none focus-visible:shadow-gold"
+            className="rounded-md bg-sand-700 px-5 py-2 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast ease-standard hover:bg-sand-800 focus-visible:outline-none focus-visible:shadow-gold"
           >
             {ctaNav.label}
           </Link>

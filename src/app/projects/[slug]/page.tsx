@@ -197,7 +197,7 @@ export default function ProjectCaseStudyPage({
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-block rounded-md bg-sand-500 px-8 py-3 font-body text-sm font-medium tracking-wide text-sand-50 transition-colors duration-fast hover:bg-sand-600"
+            className="mt-6 inline-block rounded-md bg-sand-700 px-8 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast hover:bg-sand-800"
           >
             Start a Conversation →
           </Link>

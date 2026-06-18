@@ -103,7 +103,7 @@ export default function ServicesPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-4 inline-block rounded-md bg-sand-500 px-6 py-3 font-body text-sm font-medium tracking-wide text-sand-50 transition-colors duration-fast hover:bg-sand-600"
+            className="mt-4 inline-block rounded-md bg-sand-700 px-6 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast hover:bg-sand-800"
           >
             Tell Me About Your Project →
           </Link>

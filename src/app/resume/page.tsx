@@ -62,7 +62,7 @@ export default function ResumePage() {
           <a
             href="/resume.pdf"
             download
-            className="rounded-md bg-sand-500 px-6 py-3 font-body text-sm font-medium tracking-wide text-sand-50 transition-colors duration-fast hover:bg-sand-600"
+            className="rounded-md bg-sand-700 px-6 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast hover:bg-sand-800"
           >
             Download Resume PDF →
           </a>
@@ -182,7 +182,7 @@ export default function ResumePage() {
         <div className="mt-4 flex flex-wrap gap-4">
           <Link
             href="/contact"
-            className="rounded-md bg-sand-500 px-6 py-3 font-body text-sm font-medium tracking-wide text-sand-50 transition-colors duration-fast hover:bg-sand-600"
+            className="rounded-md bg-sand-700 px-6 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast hover:bg-sand-800"
           >
             Contact Me About a Role →
           </Link>

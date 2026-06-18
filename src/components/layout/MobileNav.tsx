@@ -76,7 +76,7 @@ export default function MobileNav() {
           })}
           <Link
             href={ctaNav.href}
-            className="rounded-md bg-sand-500 px-8 py-3 font-body text-base font-medium tracking-wide text-sand-50 transition-colors duration-fast ease-standard hover:bg-sand-600"
+            className="rounded-md bg-sand-700 px-8 py-3 font-body text-base font-medium tracking-wide text-white transition-colors duration-fast ease-standard hover:bg-sand-800"
           >
             {ctaNav.label}
           </Link>
