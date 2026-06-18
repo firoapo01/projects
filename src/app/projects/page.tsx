@@ -6,21 +6,34 @@ import { motion } from "framer-motion";
 import PageWrapper from "@/components/layout/PageWrapper";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
-import { scrollReveal, staggerContainer } from "@/lib/motion";
+import { carvingVariants, artifactVariants, excavateContainer } from "@/lib/motion";
 import { projects } from "@/data/projects";
 
-const cardStagger = staggerContainer(0.1);
+const cardStagger = excavateContainer(0.1);
 
 export default function ProjectsPage() {
   return (
     <PageWrapper>
       <Section>
         <motion.div
-          variants={scrollReveal}
+          className="relative"
+          variants={carvingVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px" }}
         >
+          <span
+            className="pointer-events-none absolute -top-10 right-0 select-none"
+            style={{
+              fontFamily: "var(--font-amiri), 'Amiri', serif",
+              fontSize: "10rem",
+              lineHeight: 1,
+              color: "rgba(139,115,85,0.04)",
+            }}
+            aria-hidden="true"
+          >
+            ع
+          </span>
           <Eyebrow>Selected Work</Eyebrow>
           <h1 className="font-display text-4xl font-light text-[var(--color-text-primary)] md:text-5xl">
             Projects built for real businesses.
@@ -37,12 +50,12 @@ export default function ProjectsPage() {
           variants={cardStagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px" }}
         >
           {projects.map((project) => (
             <motion.div
               key={project.slug}
-              variants={scrollReveal}
+              variants={artifactVariants}
               whileHover={{ y: -6, transition: { duration: 0.2, ease: [0, 0, 0.58, 1] } }}
             >
               <Link

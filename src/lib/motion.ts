@@ -40,3 +40,44 @@ export function staggerContainer(stagger: number): VariantMap {
     visible: { transition: { staggerChildren: stagger } },
   };
 }
+
+const desertEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+export const excavateVariants: VariantMap = {
+  hidden: { opacity: 0, y: 60, filter: "blur(6px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: desertEase },
+  },
+};
+
+export const carvingVariants: VariantMap = {
+  hidden: { opacity: 0, y: 30, scale: 0.97, filter: "blur(4px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.7, ease: desertEase },
+  },
+};
+
+export function excavateContainer(stagger: number): VariantMap {
+  return {
+    hidden: {},
+    visible: { transition: { staggerChildren: stagger } },
+  };
+}
+
+export const artifactVariants: VariantMap = {
+  hidden: { opacity: 0, y: 40, scale: 0.92, filter: "blur(4px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.6, ease: desertEase },
+  },
+};

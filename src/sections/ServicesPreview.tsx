@@ -4,11 +4,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
-import { scrollReveal, staggerContainer } from "@/lib/motion";
+import { carvingVariants, artifactVariants, excavateVariants, excavateContainer } from "@/lib/motion";
 import { services } from "@/data/services";
 import { profile } from "@/data/profile";
 
-const cardStagger = staggerContainer(0.08);
+const cardStagger = excavateContainer(0.12);
 
 export default function ServicesPreview() {
   const { eyebrow, heading, footerCta } = profile.servicesPreview;
@@ -16,10 +16,10 @@ export default function ServicesPreview() {
   return (
     <Section>
       <motion.div
-        variants={scrollReveal}
+        variants={carvingVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-80px" }}
       >
         <Eyebrow>{eyebrow}</Eyebrow>
         <h2 className="font-display text-3xl font-light text-[var(--color-text-primary)] md:text-4xl">
@@ -32,12 +32,12 @@ export default function ServicesPreview() {
         variants={cardStagger}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-80px" }}
       >
         {services.map((service) => (
           <motion.div
             key={service.slug}
-            variants={scrollReveal}
+            variants={artifactVariants}
             className="flex flex-col gap-2 rounded-lg border border-[var(--color-border-default)] bg-[var(--color-bg-surface)] p-6"
           >
             <h3 className="font-body text-base font-semibold text-[var(--color-text-primary)]">
@@ -52,10 +52,10 @@ export default function ServicesPreview() {
 
       <motion.div
         className="mt-10"
-        variants={scrollReveal}
+        variants={excavateVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-80px" }}
       >
         <Link
           href={footerCta.href}

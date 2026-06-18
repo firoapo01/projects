@@ -5,11 +5,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
-import { scrollReveal, staggerContainer } from "@/lib/motion";
+import { carvingVariants, artifactVariants, excavateVariants, excavateContainer } from "@/lib/motion";
 import { projects } from "@/data/projects";
 import { profile } from "@/data/profile";
 
-const cardStagger = staggerContainer(0.1);
+const cardStagger = excavateContainer(0.1);
 
 export default function FeaturedProjects() {
   const { eyebrow, heading, body, footerCta } = profile.featuredProjects;
@@ -17,10 +17,10 @@ export default function FeaturedProjects() {
   return (
     <Section>
       <motion.div
-        variants={scrollReveal}
+        variants={carvingVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-80px" }}
       >
         <Eyebrow>{eyebrow}</Eyebrow>
         <h2 className="font-display text-3xl font-light text-[var(--color-text-primary)] md:text-4xl">
@@ -36,12 +36,12 @@ export default function FeaturedProjects() {
         variants={cardStagger}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-80px" }}
       >
         {projects.map((project) => (
           <motion.div
             key={project.slug}
-            variants={scrollReveal}
+            variants={artifactVariants}
             whileHover={{ y: -6, transition: { duration: 0.2, ease: [0, 0, 0.58, 1] } }}
           >
             <Link
@@ -87,10 +87,10 @@ export default function FeaturedProjects() {
 
       <motion.div
         className="mt-10"
-        variants={scrollReveal}
+        variants={excavateVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-80px" }}
       >
         <Link
           href={footerCta.href}

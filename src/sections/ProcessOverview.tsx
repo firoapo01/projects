@@ -4,11 +4,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
-import { scrollReveal, staggerContainer } from "@/lib/motion";
+import { carvingVariants, excavateVariants, excavateContainer } from "@/lib/motion";
 import { processSteps } from "@/data/process";
 import { profile } from "@/data/profile";
 
-const stepStagger = staggerContainer(0.06);
+const stepStagger = excavateContainer(0.08);
 
 export default function ProcessOverview() {
   const { eyebrow, heading, footerCta } = profile.processOverview;
@@ -16,10 +16,10 @@ export default function ProcessOverview() {
   return (
     <Section>
       <motion.div
-        variants={scrollReveal}
+        variants={carvingVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-80px" }}
       >
         <Eyebrow>{eyebrow}</Eyebrow>
         <h2 className="font-display text-3xl font-light text-[var(--color-text-primary)] md:text-4xl">
@@ -32,10 +32,10 @@ export default function ProcessOverview() {
         variants={stepStagger}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-80px" }}
       >
         {processSteps.map((step, index) => (
-          <motion.div key={step.step} variants={scrollReveal} className="flex items-center gap-3">
+          <motion.div key={step.step} variants={excavateVariants} className="flex items-center gap-3">
             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[var(--color-border-strong)] font-body text-xs font-semibold text-[var(--color-accent)]">
               {String(step.step).padStart(2, "0")}
             </div>
@@ -53,10 +53,10 @@ export default function ProcessOverview() {
 
       <motion.div
         className="mt-10"
-        variants={scrollReveal}
+        variants={excavateVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-80px" }}
       >
         <Link
           href={footerCta.href}
