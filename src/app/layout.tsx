@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans, JetBrains_Mono, Amiri } from "next/font/google";
 import { seo } from "@/data/seo";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SandParticles from "@/components/SandParticles";
+import DesertDunes from "@/components/DesertDunes";
+import HeatHaze from "@/components/HeatHaze";
+import DesertSun from "@/components/DesertSun";
+import CalligraphyElement from "@/components/CalligraphyElement";
+import CursorOrb from "@/components/CursorOrb";
 import "@/styles/globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -21,6 +27,12 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-jetbrains-mono",
+});
+
+const amiri = Amiri({
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+  variable: "--font-amiri",
 });
 
 export const metadata: Metadata = {
@@ -55,12 +67,20 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
+      className={`${cormorant.variable} ${dmSans.variable} ${jetbrainsMono.variable} ${amiri.variable}`}
     >
       <body className="font-body overflow-x-hidden">
-        <Navbar />
-        {children}
-        <Footer />
+        <DesertSun />
+        <CalligraphyElement />
+        <SandParticles />
+        <HeatHaze />
+        <DesertDunes />
+        <CursorOrb />
+        <div className="relative z-10">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
