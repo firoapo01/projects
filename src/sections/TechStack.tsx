@@ -50,14 +50,13 @@ const iconVariants: VariantMap = {
 function MonitorIcon() {
   return (
     <svg
-      width="56"
-      height="56"
       viewBox="0 0 24 24"
       fill="none"
       stroke="rgba(139,115,85,0.7)"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
+      className="h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14"
     >
       <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
       <line x1="8" y1="21" x2="16" y2="21" />
@@ -87,16 +86,16 @@ export default function TechStack() {
           >
             م
           </span>
-          <p className="mb-1 font-body text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-text-tertiary)]">
+          <p className="mb-1 font-body text-xs font-medium uppercase tracking-widest text-[var(--color-text-tertiary)] sm:text-sm">
             Tools of the Craft
           </p>
-          <h2 className="font-display text-3xl font-light text-[var(--color-text-primary)] md:text-4xl">
+          <h2 className="font-display text-3xl font-light text-[var(--color-text-primary)] sm:text-4xl md:text-5xl">
             Tech Stack
           </h2>
         </div>
 
         <motion.div
-          className="mx-auto grid w-fit grid-cols-3 gap-3 md:grid-cols-5"
+          className="mx-auto grid w-fit grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 md:grid-cols-5"
           variants={gridStagger}
           initial="hidden"
           whileInView="visible"
@@ -105,7 +104,7 @@ export default function TechStack() {
           {stack.map((tech) => (
             <motion.div
               key={tech.name}
-              className="group relative flex h-[120px] w-[120px] cursor-default flex-col items-center justify-center rounded-2xl"
+              className="group relative flex h-[80px] w-[80px] cursor-default flex-col items-center justify-center rounded-xl sm:h-[100px] sm:w-[100px] sm:rounded-2xl md:h-[120px] md:w-[120px]"
               style={{
                 border: "1px solid rgba(139,115,85,0.15)",
                 background: "rgba(139,115,85,0.04)",
@@ -126,14 +125,13 @@ export default function TechStack() {
                 <img
                   src={tech.icon}
                   alt={tech.name}
-                  width={56}
-                  height={56}
+                  className="h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14"
                   loading="lazy"
                 />
               ) : (
                 <MonitorIcon />
               )}
-              <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap font-body text-[13px] text-[rgba(139,115,85,0.7)] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              <span className="mt-1.5 text-center font-body text-[10px] text-[rgba(139,115,85,0.7)] opacity-0 transition-opacity duration-200 group-hover:opacity-100 sm:text-[11px] md:text-[13px]">
                 {tech.name}
               </span>
             </motion.div>
