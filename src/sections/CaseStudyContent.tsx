@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
-import ImageLightbox, { useLightbox } from "@/components/ImageLightbox";
+import HoverZoom from "@/components/HoverZoom";
 import { carvingVariants, excavateVariants, artifactVariants, excavateContainer } from "@/lib/motion";
 import type { Project } from "@/types";
 
@@ -13,11 +13,8 @@ const contentStagger = excavateContainer(0.1);
 const screenshotStagger = excavateContainer(0.12);
 
 export default function CaseStudyContent({ project }: { project: Project }) {
-  const { selected, open, close } = useLightbox();
-
   return (
     <Section>
-      <ImageLightbox image={selected} onClose={close} />
       <motion.div
         variants={excavateVariants}
         initial="hidden"
@@ -195,40 +192,9 @@ export default function CaseStudyContent({ project }: { project: Project }) {
             viewport={{ once: true, margin: "-80px" }}
           >
             {project.screenshots.map((shot) => (
-              <motion.figure
-                key={shot.src}
-                variants={artifactVariants}
-                className="group"
-              >
-                <motion.div
-                  className="relative aspect-[4/3] w-full overflow-hidden rounded-lg"
-                  style={{ cursor: "zoom-in" }}
-                  whileHover={{
-                    scale: 1.02,
-                    filter: "brightness(1.08)",
-                    transition: { duration: 0.3 },
-                  }}
-                  onClick={() => open(shot.src, shot.caption)}
-                >
-                  <Image
-                    src={shot.src}
-                    alt={shot.caption}
-                    fill
-                    className="object-cover"
-                  />
-                  <span className="absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(212,180,120,0.9)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="11" cy="11" r="8" />
-                      <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                      <line x1="11" y1="8" x2="11" y2="14" />
-                      <line x1="8" y1="11" x2="14" y2="11" />
-                    </svg>
-                  </span>
-                </motion.div>
-                <figcaption className="mt-2 font-body text-sm text-[var(--color-text-tertiary)]">
-                  {shot.caption}
-                </figcaption>
-              </motion.figure>
+              <motion.div key={shot.src} variants={artifactVariants}>
+                <HoverZoom src={shot.src} alt={shot.caption} caption={shot.caption} />
+              </motion.div>
             ))}
           </motion.div>
         </motion.div>
