@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
+import DesertButton from "@/components/DesertButton";
+import { ShimmerSweep } from "@/components/CardEffects";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { carvingVariants, excavateVariants, artifactVariants, excavateContainer } from "@/lib/motion";
@@ -40,7 +41,15 @@ export default function ServicesContent() {
           viewport={{ once: true, margin: "-80px" }}
         >
           {services.map((service) => (
-            <motion.div key={service.slug} variants={excavateVariants} className="py-12 first:pt-0">
+            <motion.div
+              key={service.slug}
+              variants={excavateVariants}
+              className="relative py-12 first:pt-0 rounded-xl"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+            >
+              <ShimmerSweep />
               <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
                 {service.title}
               </h2>
@@ -122,12 +131,9 @@ export default function ServicesContent() {
           <p className="font-body text-base text-[var(--color-text-secondary)]">
             Not sure which service fits your project?
           </p>
-          <Link
-            href="/contact"
-            className="mt-4 inline-block rounded-md bg-sand-700 px-6 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast hover:bg-sand-800"
-          >
+          <DesertButton href="/contact" className="mt-4 inline-block">
             Tell Me About Your Project →
-          </Link>
+          </DesertButton>
         </motion.div>
       </Section>
     </>

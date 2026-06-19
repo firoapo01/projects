@@ -6,7 +6,13 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { mainNav, ctaNav, brand } from "@/data/navigation";
 import { cn } from "@/lib/utils";
+import DesertButton from "@/components/DesertButton";
 import MobileNav from "./MobileNav";
+
+const underlineVariants = {
+  rest: { scaleX: 0 },
+  hover: { scaleX: 1 },
+};
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -43,42 +49,62 @@ export default function Navbar() {
           {mainNav.map((link) => {
             const isActive = pathname === link.href;
             return (
-              <Link
+              <motion.div
                 key={link.href}
-                href={link.href}
-                aria-current={isActive ? "page" : undefined}
-                className={cn(
-                  "relative font-body text-sm font-medium transition-colors duration-fast ease-standard",
-                  isActive
-                    ? "text-sand-800"
-                    : "text-[var(--color-text-secondary)] hover:text-[var(--color-accent)]"
-                )}
+                initial="rest"
+                whileHover="hover"
+                animate="rest"
+                className="relative"
               >
-                {link.label}
+                <Link
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "relative font-body text-sm font-medium transition-colors duration-fast ease-standard",
+                    isActive
+                      ? "text-sand-800"
+                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-accent)]"
+                  )}
+                >
+                  {link.label}
+                </Link>
                 {isActive ? (
-                  <span
-                    className="absolute -bottom-[2px] left-0 h-px w-full bg-current"
-                  />
+                  <>
+                    <span className="absolute -bottom-[2px] left-0 h-px w-full bg-current" />
+                    <motion.span
+                      className="absolute -top-[6px] left-1/2"
+                      style={{
+                        translateX: "-50%",
+                        width: 4,
+                        height: 4,
+                        borderRadius: "50%",
+                        backgroundColor: "var(--color-accent)",
+                      }}
+                      animate={{
+                        scale: [1, 1.4, 1],
+                        opacity: [0.7, 1, 0.7],
+                      }}
+                      transition={{
+                        duration: 2.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                  </>
                 ) : (
                   <motion.span
-                    className="absolute -bottom-[2px] left-0 h-px w-full bg-current"
-                    style={{ scaleX: 0, originX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="absolute -bottom-[2px] left-1/2 h-px w-full bg-current"
+                    style={{ translateX: "-50%", originX: "50%" }}
+                    variants={underlineVariants}
+                    transition={{ duration: 0.35, ease: [0.34, 1.56, 0.64, 1] }}
                   />
                 )}
-              </Link>
+              </motion.div>
             );
           })}
-          <motion.a
-            href={ctaNav.href}
-            className="rounded-md bg-sand-700 px-5 py-2 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast ease-standard hover:bg-sand-800 focus-visible:outline-none focus-visible:shadow-gold"
-            whileHover={{ y: -2, boxShadow: "0 8px 20px rgba(180, 150, 80, 0.3)" }}
-            whileTap={{ y: 0, boxShadow: "none" }}
-            transition={{ duration: 0.2 }}
-          >
+          <DesertButton href={ctaNav.href} className="px-5 py-2 focus-visible:outline-none focus-visible:shadow-gold">
             {ctaNav.label}
-          </motion.a>
+          </DesertButton>
         </div>
 
         <MobileNav />

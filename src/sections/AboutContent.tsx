@@ -4,11 +4,25 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
+import DesertButton from "@/components/DesertButton";
 import { carvingVariants, excavateVariants, artifactVariants, excavateContainer } from "@/lib/motion";
 import { profile, values, skills, learningPath } from "@/data/profile";
 
 const valuesStagger = excavateContainer(0.1);
 const skillsStagger = excavateContainer(0.08);
+
+function StoneDivider() {
+  return (
+    <motion.div
+      className="mx-auto my-8 h-px w-full bg-gradient-to-r from-transparent via-sand-300 to-transparent"
+      initial={{ scaleX: 0, opacity: 0 }}
+      whileInView={{ scaleX: 1, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      style={{ originX: "50%" }}
+    />
+  );
+}
 
 export default function AboutContent() {
   return (
@@ -43,6 +57,8 @@ export default function AboutContent() {
         </motion.div>
       </Section>
 
+      <StoneDivider />
+
       <Section className="pt-0 lg:pt-0">
         <motion.div
           variants={carvingVariants}
@@ -72,6 +88,8 @@ export default function AboutContent() {
           ))}
         </motion.div>
       </Section>
+
+      <StoneDivider />
 
       <Section className="pt-0 lg:pt-0">
         <motion.div
@@ -109,6 +127,8 @@ export default function AboutContent() {
         </motion.div>
       </Section>
 
+      <StoneDivider />
+
       <Section className="pt-0 lg:pt-0">
         <motion.div
           variants={carvingVariants}
@@ -143,6 +163,8 @@ export default function AboutContent() {
         </motion.div>
       </Section>
 
+      <StoneDivider />
+
       <Section className="pt-0 lg:pt-0">
         <motion.div
           variants={carvingVariants}
@@ -175,6 +197,8 @@ export default function AboutContent() {
         </motion.div>
       </Section>
 
+      <StoneDivider />
+
       <Section className="pt-0 lg:pt-0">
         <motion.div
           className="flex flex-wrap gap-4"
@@ -183,12 +207,9 @@ export default function AboutContent() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
         >
-          <Link
-            href="/projects"
-            className="rounded-md bg-sand-700 px-6 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast hover:bg-sand-800"
-          >
+          <DesertButton href="/projects">
             See My Projects →
-          </Link>
+          </DesertButton>
           <Link
             href="/contact"
             className="rounded-md border border-[var(--color-border-default)] px-6 py-3 font-body text-sm font-medium text-[var(--color-text-primary)] transition-colors duration-fast hover:border-[var(--color-border-strong)]"

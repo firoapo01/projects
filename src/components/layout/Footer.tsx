@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { motion } from "framer-motion";
 import { footerNav, brand } from "@/data/navigation";
 
 export default function Footer() {
@@ -19,13 +21,21 @@ export default function Footer() {
 
         <nav aria-label="Footer navigation" className="flex flex-wrap gap-6">
           {footerNav.map((link) => (
-            <Link
+            <motion.a
               key={link.href}
               href={link.href}
-              className="font-body text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-fast ease-standard hover:text-[var(--color-accent)]"
+              {...(link.href.startsWith("http") || link.href.startsWith("mailto:")
+                ? { target: "_blank", rel: "noreferrer" }
+                : {})}
+              className="font-body text-sm font-medium text-[var(--color-text-secondary)] transition-colors duration-fast ease-standard"
+              whileHover={{
+                textShadow: "0 0 16px rgba(212,180,120,0.7)",
+                color: "rgba(139,115,85,1)",
+                transition: { duration: 0.2 },
+              }}
             >
               {link.label}
-            </Link>
+            </motion.a>
           ))}
         </nav>
       </div>

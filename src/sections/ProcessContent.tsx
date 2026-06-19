@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
+import DesertButton from "@/components/DesertButton";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { carvingVariants, excavateVariants, artifactVariants, excavateContainer } from "@/lib/motion";
@@ -46,10 +46,21 @@ export default function ProcessContent() {
               key={step.step}
               variants={excavateVariants}
               className="grid gap-6 border-t border-[var(--color-border-subtle)] py-10 md:grid-cols-[80px_1fr] lg:grid-cols-[120px_1fr]"
+              whileHover={{
+                x: 6,
+                transition: { duration: 0.25, ease: [0, 0, 0.58, 1] },
+              }}
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--color-border-strong)] font-body text-sm font-semibold text-[var(--color-accent)]">
+              <motion.div
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--color-border-strong)] font-body text-sm font-semibold text-[var(--color-accent)]"
+                whileHover={{
+                  scale: 1.1,
+                  color: "rgba(139,115,85,1)",
+                  transition: { duration: 0.2 },
+                }}
+              >
                 {String(step.step).padStart(2, "0")}
-              </div>
+              </motion.div>
               <div>
                 <h2 className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
                   {step.title}
@@ -138,12 +149,9 @@ export default function ProcessContent() {
           <p className="font-body text-base text-[var(--color-text-secondary)]">
             The first step is a conversation.
           </p>
-          <Link
-            href="/contact"
-            className="mt-4 inline-block rounded-md bg-sand-700 px-6 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast hover:bg-sand-800"
-          >
+          <DesertButton href="/contact" className="mt-4 inline-block">
             Get in Touch About Your Project →
-          </Link>
+          </DesertButton>
         </motion.div>
       </Section>
     </>

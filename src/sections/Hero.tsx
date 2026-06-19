@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
+import DesertButton from "@/components/DesertButton";
 import { profile } from "@/data/profile";
 
 const NAME = "ABDELRAHMAN";
@@ -131,18 +132,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 3.5, ease: [0, 0, 0.58, 1] }}
         >
-          <motion.a
-            href={primaryCta.href}
-            className="rounded-md bg-sand-700 px-6 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast hover:bg-sand-800"
-            whileHover={{
-              y: -2,
-              boxShadow: "0 8px 20px rgba(180, 150, 80, 0.3)",
-            }}
-            whileTap={{ y: 0, boxShadow: "none" }}
-            transition={{ duration: 0.2 }}
-          >
+          <DesertButton href={primaryCta.href}>
             {primaryCta.label}
-          </motion.a>
+          </DesertButton>
           <Link
             href={secondaryCta.href}
             className="rounded-md border border-[var(--color-border-default)] px-6 py-3 font-body text-sm font-medium text-[var(--color-text-primary)] transition-colors duration-fast hover:border-[var(--color-border-strong)] hover:text-[var(--color-accent)]"

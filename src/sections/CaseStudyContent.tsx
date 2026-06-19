@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
+import DesertButton from "@/components/DesertButton";
 import { carvingVariants, excavateVariants, artifactVariants, excavateContainer } from "@/lib/motion";
 import type { Project } from "@/types";
 
@@ -212,12 +213,9 @@ export default function CaseStudyContent({ project }: { project: Project }) {
         <p className="font-display text-2xl font-light text-[var(--color-text-primary)] md:text-3xl">
           Have a similar project?
         </p>
-        <Link
-          href="/contact"
-          className="mt-6 inline-block rounded-md bg-sand-700 px-8 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast hover:bg-sand-800"
-        >
+        <DesertButton href="/contact" className="mt-6 inline-block px-8">
           Start a Conversation →
-        </Link>
+        </DesertButton>
       </motion.div>
     </Section>
   );

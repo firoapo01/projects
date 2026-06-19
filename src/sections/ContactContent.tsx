@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
+import DesertButton from "@/components/DesertButton";
 import { carvingVariants, excavateVariants, artifactVariants, excavateContainer } from "@/lib/motion";
 import { contactInfo, availability } from "@/data/profile";
 
@@ -122,12 +123,9 @@ export default function ContactContent() {
             </motion.div>
 
             <motion.div variants={artifactVariants}>
-              <button
-                type="submit"
-                className="w-full rounded-md bg-sand-700 px-6 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-fast hover:bg-sand-800 focus-visible:outline-none focus-visible:shadow-gold md:w-auto min-h-[44px]"
-              >
+              <DesertButton type="submit" className="w-full focus-visible:outline-none focus-visible:shadow-gold md:w-auto min-h-[44px]">
                 Send Message →
-              </button>
+              </DesertButton>
             </motion.div>
           </motion.form>
 
