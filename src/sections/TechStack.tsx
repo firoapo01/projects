@@ -67,7 +67,7 @@ function MonitorIcon() {
 
 export default function TechStack() {
   return (
-    <Section className="py-10 md:py-14">
+    <Section className="py-10 pb-4 md:py-14 md:pb-4">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -95,7 +95,7 @@ export default function TechStack() {
         </div>
 
         <motion.div
-          className="mx-auto grid w-fit grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 md:grid-cols-5"
+          className="mx-auto mt-8 grid w-fit grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 md:grid-cols-5"
           variants={gridStagger}
           initial="hidden"
           whileInView="visible"
@@ -131,7 +131,7 @@ export default function TechStack() {
               ) : (
                 <MonitorIcon />
               )}
-              <span className="mt-1.5 text-center font-body text-[10px] text-[rgba(139,115,85,0.7)] opacity-0 transition-opacity duration-200 group-hover:opacity-100 sm:text-[11px] md:text-[13px]">
+              <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap font-body text-[10px] text-[rgba(139,115,85,0.7)] opacity-0 transition-opacity duration-200 group-hover:opacity-100 pointer-events-none sm:text-[11px] md:text-[13px]">
                 {tech.name}
               </span>
             </motion.div>
