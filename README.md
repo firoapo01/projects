@@ -24,7 +24,7 @@ The portfolio itself is also a project. It was built with performance, accessibi
 | Framework | Next.js 14 (App Router) |
 | Styling | Tailwind CSS |
 | Motion | Framer Motion 12 |
-| Language | TypeScript |
+| Language | Next.js |
 | Fonts | Cormorant Garamond, DM Sans, Amiri |
 | Deployment | Vercel |
 
