@@ -52,7 +52,7 @@ export default function HoverZoom({ src, alt, caption }: HoverZoomProps) {
             <div className="absolute inset-0 bg-black/75 backdrop-blur-md" />
             <motion.div
               className="relative z-10 overflow-hidden rounded-2xl shadow-2xl"
-              style={{ width: "85vw", maxWidth: "1100px", aspectRatio: "16/9" }}
+              style={{ width: "92vw", maxWidth: "1400px", aspectRatio: "16/9" }}
               initial={{ scale: 0.82, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}

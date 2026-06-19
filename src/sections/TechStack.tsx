@@ -95,7 +95,7 @@ export default function TechStack() {
         </div>
 
         <motion.div
-          className="mx-auto mt-8 grid w-fit grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 md:grid-cols-5"
+          className="mx-auto mt-8 grid w-fit grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-4 md:grid-cols-5 md:gap-5"
           variants={gridStagger}
           initial="hidden"
           whileInView="visible"
