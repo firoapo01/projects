@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import Eyebrow from "@/components/ui/Eyebrow";
-import HoverZoom from "@/components/HoverZoom";
 import { carvingVariants, excavateVariants, artifactVariants, excavateContainer } from "@/lib/motion";
 import type { Project } from "@/types";
 
@@ -192,7 +192,10 @@ export default function CaseStudyContent({ project }: { project: Project }) {
           >
             {project.screenshots.map((shot) => (
               <motion.div key={shot.src} variants={artifactVariants}>
-                <HoverZoom src={shot.src} alt={shot.caption} caption={shot.caption} />
+                <div className="relative w-full aspect-video overflow-hidden rounded-lg">
+                  <Image src={shot.src} alt={shot.caption} fill className="object-cover" />
+                </div>
+                <p className="mt-2 font-body text-xs text-[var(--color-text-tertiary)]">{shot.caption}</p>
               </motion.div>
             ))}
           </motion.div>

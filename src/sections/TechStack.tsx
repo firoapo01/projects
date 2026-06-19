@@ -95,7 +95,7 @@ export default function TechStack() {
         </div>
 
         <motion.div
-          className="mx-auto mt-8 grid w-fit grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-4 md:grid-cols-5 md:gap-5"
+          className="mx-auto mt-8 grid w-fit grid-cols-3 gap-6 sm:grid-cols-4 sm:gap-8 md:grid-cols-5 md:gap-10"
           variants={gridStagger}
           initial="hidden"
           whileInView="visible"
@@ -104,7 +104,7 @@ export default function TechStack() {
           {stack.map((tech) => (
             <motion.div
               key={tech.name}
-              className="group relative flex h-[80px] w-[80px] cursor-default flex-col items-center justify-center rounded-xl sm:h-[100px] sm:w-[100px] sm:rounded-2xl md:h-[120px] md:w-[120px]"
+              className="group relative flex h-[80px] w-[80px] cursor-default flex-col items-center justify-center rounded-xl py-2 sm:h-[100px] sm:w-[100px] sm:rounded-2xl md:h-[120px] md:w-[120px]"
               style={{
                 border: "1px solid rgba(139,115,85,0.15)",
                 background: "rgba(139,115,85,0.04)",
