@@ -63,17 +63,14 @@ export default function ProjectsPage() {
                 className="group flex h-full flex-col rounded-xl border border-[var(--color-border-default)] bg-[var(--color-bg-surface)] shadow-none transition-all duration-base hover:shadow-md hover:border-[rgba(176,154,90,0.6)]"
               >
                 {project.thumbnail && (
-                  <motion.div
-                    className="relative h-[240px] w-full overflow-hidden rounded-t-xl"
-                    whileHover={{ scale: 1.03, transition: { duration: 0.4, ease: [0, 0, 0.58, 1] } }}
-                  >
+                  <div className="relative h-[240px] w-full overflow-hidden rounded-t-xl">
                     <Image
                       src={project.thumbnail}
                       alt={`${project.title} preview`}
                       fill
                       className="object-cover"
                     />
-                  </motion.div>
+                  </div>
                 )}
                 <div className="flex flex-1 flex-col gap-3 p-6">
                   <p className="font-mono text-xs text-[var(--color-text-tertiary)]">

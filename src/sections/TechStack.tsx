@@ -8,6 +8,18 @@ import type { VariantMap } from "@/lib/motion";
 const BASE_URL =
   "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
 
+const techGlows: Record<string, string> = {
+  HTML5: "rgba(227, 79, 38, 0.25)",
+  CSS3: "rgba(38, 77, 228, 0.25)",
+  JavaScript: "rgba(247, 223, 30, 0.25)",
+  jQuery: "rgba(18, 70, 130, 0.25)",
+  WordPress: "rgba(33, 117, 155, 0.25)",
+  WooCommerce: "rgba(150, 88, 138, 0.25)",
+  PHP: "rgba(119, 123, 180, 0.25)",
+  Responsive: "rgba(139, 115, 85, 0.25)",
+  Git: "rgba(240, 80, 50, 0.25)",
+};
+
 const stack = [
   { name: "HTML5", icon: `${BASE_URL}/html5/html5-original.svg` },
   { name: "CSS3", icon: `${BASE_URL}/css3/css3-original.svg` },
@@ -102,10 +114,11 @@ export default function TechStack() {
               variants={iconVariants}
               whileHover={{
                 filter: "grayscale(0) opacity(1) sepia(0)",
-                scale: 1.1,
-                y: -4,
-                boxShadow: "0 8px 24px rgba(139,115,85,0.2)",
-                transition: { duration: 0.3, ease: [0, 0, 0.58, 1] },
+                scale: 1.15,
+                y: -6,
+                boxShadow: `0 0 28px 8px ${techGlows[tech.name] || "rgba(139,115,85,0.25)"}, 0 8px 24px rgba(0,0,0,0.1)`,
+                backgroundColor: (techGlows[tech.name] || "rgba(139,115,85,0.25)").replace("0.25", "0.08"),
+                transition: { duration: 0.25, ease: [0, 0, 0.58, 1] },
               }}
             >
               {tech.icon ? (
