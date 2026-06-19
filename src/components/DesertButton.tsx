@@ -36,7 +36,6 @@ export default function DesertButton({
     onMouseMove: handleMouseMove,
     whileHover: {
       y: -2,
-      letterSpacing: "0.04em",
       boxShadow: "0 8px 24px rgba(139,115,85,0.35)",
     },
     whileTap: { scale: 0.96, y: 0 },
