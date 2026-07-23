@@ -13,7 +13,7 @@ export const ctaNav: NavLink = { label: "Get in Touch", href: "/contact" };
 export const footerNav: NavLink[] = [
   { label: "Resume", href: "/resume" },
   { label: "GitHub", href: "https://github.com/firoapo01" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/abdelrahman-hassan-0b81a717b" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/omnistack-web/" },
   { label: "Email", href: "mailto:abowael0112@gmail.com" },
 ];
 
