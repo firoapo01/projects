@@ -91,7 +91,7 @@ export const learningPath = {
 
 export const contactInfo: ContactInfo = {
   email: "abowael0112@gmail.com",
-  linkedin: "https://www.linkedin.com/in/abdelrahman-hassan-0b81a717b",
+  linkedin: "https://www.linkedin.com/company/omnistack-web/",
   github: "https://github.com/firoapo01",
   location: "Turkey",
 };
